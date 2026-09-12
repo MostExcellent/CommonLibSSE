@@ -140,14 +140,14 @@ namespace RE
 		~ActorState() override;  // 00
 
 		// override (IMovementState)
-		void  Unk_01(void) override;          // 01 - { return 0; }
-		void  Unk_02(void) override;          // 02 - { return; }
-		void  Unk_03(void) override;          // 03 - { return; }
-		void  Unk_04(void) override;          // 04 - { return; }
-		float DoGetMovementSpeed() override;  // 05 - { return 0.0; }
-		float DoGetRotationSpeed() override;  // 06 - { return 0.0; }
-		void  Unk_07(void) override;          // 07 - { return; }
-		void  Unk_08(void) override;          // 08 - { return 0; }
+		FormID DoGetNumericID() override;                                    // 01 - { return 0; }
+		void  DoGetPathingLocation(BSPathingLocation& a_location) override;  // 02 - { return; }
+		void  DoGetLocation(NiPoint3& a_location) override;                  // 03 - { return; }
+		void  DoGetEulerAngles(NiPoint3& a_eulerAngles) override;            // 04 - { return; }
+		float DoGetMovementSpeed() override;                                 // 05 - { return 0.0; }
+		float DoGetRotationSpeed() override;                                 // 06 - { return 0.0; }
+		void  Unk_07(void) override;                                         // 07 - { return; }
+		void  Unk_08(void) override;                                         // 08 - { return 0; }
 
 		// add
 		virtual bool DoSetSitSleepState(SIT_SLEEP_STATE a_state);  // 14
