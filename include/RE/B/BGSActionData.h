@@ -13,6 +13,13 @@ namespace RE
 		inline static constexpr auto RTTI = RTTI_BGSActionData;
 		inline static constexpr auto VTABLE = VTABLE_BGSActionData;
 
+		enum class FLAGS
+		{
+			kNone = 0,
+			kGet = 1 << 0,
+			kRun = 1 << 1
+		};
+
 		virtual ~BGSActionData() override;  // 00
 
 		// add
@@ -20,7 +27,8 @@ namespace RE
 		virtual bool           Process();      // 05 - { return false; }
 
 		// members
-		uint32_t flags;  // 58
+		REX::TEnumSet<FLAGS, std::uint32_t> flags;  // 58
 	};
+	static_assert(offsetof(BGSActionData, flags) == 0x58);
 	static_assert(sizeof(BGSActionData) == 0x60);
 }
