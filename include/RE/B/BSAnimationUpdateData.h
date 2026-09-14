@@ -17,7 +17,7 @@ namespace RE
 		NiPoint3*                           optionalEyePosition{ nullptr };  // 18
 		IPostAnimationChannelUpdateFunctor* updateFunctor{ nullptr };        // 20
 		uint16_t                            flags;                           // 28
-		bool                                unk2A;                           // 2A
+		bool                                forceUpdate;                     // 2A
 		bool                                unk2B;                           // 2B
 		bool                                unk2C;                           // 2C
 		bool                                unk2D;                           // 2D
