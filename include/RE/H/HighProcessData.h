@@ -360,8 +360,8 @@ namespace RE
 		bool                                                  unk46A;                                    // 46A
 		bool                                                  deathDialogue;                             // 46B
 		bool                                                  fistsDrawn;                                // 46C
-		bool                                                  unk46D;                                    // 46D
-		bool                                                  unk46E;                                    // 46E
+		bool                                                  freezeGraphLocomotionChannels;             // 46D
+		bool                                                  freezeGraphLocomotionEvents;               // 46E
 		bool                                                  allowRotation;                             // 46F
 		bool                                                  doorActivated;                             // 470
 		bool                                                  unk471;                                    // 471
