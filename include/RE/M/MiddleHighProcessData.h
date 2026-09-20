@@ -132,7 +132,7 @@ namespace RE
 	struct MiddleHighProcessData
 	{
 	public:
-		BSTEventSource<void*>                       unk000;                      // 000
+		BSTEventSource<ActorInventoryEvent>         inventoryEventSource;        // 000
 		ActorPackage                                runOncePackage;              // 058
 		BSTArray<ActorHandle>                       deadDetectList;              // 088
 		BSSimpleList<TESObjectREFR*>                refListChairBed;             // 0A0
