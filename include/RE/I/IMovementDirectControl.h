@@ -13,14 +13,14 @@ namespace RE
 		~IMovementDirectControl() override;  // 00
 
 		// add
-		virtual void Unk_01(void) = 0;  // 01
-		virtual void Unk_02(void) = 0;  // 02
-		virtual void Unk_03(void) = 0;  // 03
-		virtual void Unk_04(void) = 0;  // 04
-		virtual void Unk_05(void) = 0;  // 05
-		virtual void Unk_06(void) = 0;  // 06
-		virtual void Unk_07(void) = 0;  // 07
-		virtual void Unk_08(void) = 0;  // 08
+		virtual void SetDirectControl() = 0;                                                       // 01
+		virtual void SetMovementDirection(const NiPoint3& a_directionEuler) = 0;                   // 02
+		virtual void SetMovementSpeed(float a_speedMult) = 0;                                      // 03
+		virtual void SetMovementRotationSpeed(const NiPoint3& a_rotationSpeedMult) = 0;            // 04
+		virtual void RampToMovementDirection(const NiPoint3& a_directionEuler, float a_time) = 0;  // 05
+		virtual void RampToMovementSpeed(float a_speedMult, float a_time) = 0;                     // 06
+		virtual void RampToRotationSpeed(const NiPoint3& a_rotationSpeedMult, float a_time) = 0;   // 07
+		virtual void ClearDirectControl() = 0;  // 08
 	};
 	static_assert(sizeof(IMovementDirectControl) == 0x8);
 }

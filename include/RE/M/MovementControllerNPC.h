@@ -25,6 +25,23 @@ namespace RE
 
 		~MovementControllerNPC() override;  // 00
 
+		// override (IMovementDirectControl)
+		void SetDirectControl() override;
+		void SetMovementDirection(const NiPoint3& a_directionEuler) override;
+		void SetMovementSpeed(float a_speedMult) override;
+		void SetMovementRotationSpeed(const NiPoint3& a_rotationSpeedMult) override;
+		void RampToMovementDirection(const NiPoint3& a_directionEuler, float a_time) override;
+		void RampToMovementSpeed(float a_speedMult, float a_time) override;
+		void RampToRotationSpeed(const NiPoint3& a_rotationSpeedMult, float a_time) override;
+		void ClearDirectControl() override;
+
+		// override (IMovementPlannerDirectControl)
+		void SetPlannerDirectControl() override;
+		void SetPlannerTargetDirection(const NiPoint3& a_directionEuler) override;
+		void SetPlannerTargetSpeed(float a_speedMult) override;
+		void SetPlannerTargetAngle(const NiPoint3& a_angle) override;
+		void ClearPlannerDirectControl() override;
+
 		// add
 		virtual void Unk_0A(void);         // 0A
 		virtual void Unk_0B(void);         // 0B
@@ -56,7 +73,8 @@ namespace RE
 		std::uint32_t unk1C0;          // 1C0
 		std::uint8_t  unk1C4;          // 1C4
 		bool          controlsDriven;  // 1C5
-		std::uint16_t unk1C6;          // 1C6
+		bool          directControl;   // 1C6 - Set by SetDirectControl - unsure "real" name
+		bool		  unk1C7;          // 1C7
 		std::uint64_t unk1C8;          // 1C8
 	};
 	static_assert(sizeof(MovementControllerNPC) == 0x1D0);
